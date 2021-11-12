@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import{ HttpClient} from '@angular/common/http'
 import { Producto } from '../modelo/Producto';
-<<<<<<< HEAD
 import { Persona } from '../modelo/Persona';
-=======
->>>>>>> 6ef0c95b837e2a345cc0c3159fcec104f3638ca6
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +20,7 @@ export class ServiceService {
   createProducto(producto:Producto){
     return this.http.post<Producto>(this.Url,producto);
   }
-<<<<<<< HEAD
+
 
   getPersonas(){
     return this.http.get<Persona[]>(this.Url);
@@ -31,6 +29,4 @@ export class ServiceService {
   createPersona(persona:Persona){
     return this.http.post<Persona>(this.Url,persona);
   }
-=======
->>>>>>> 6ef0c95b837e2a345cc0c3159fcec104f3638ca6
 }
