@@ -11,7 +11,10 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class VentaComponent implements OnInit {
 
   productos:Producto[] = [];
+<<<<<<< HEAD
   producto:Producto = new Producto();
+=======
+>>>>>>> 6ef0c95b837e2a345cc0c3159fcec104f3638ca6
   constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit(){
@@ -20,6 +23,7 @@ export class VentaComponent implements OnInit {
       this.productos=data;
     })
   }
+<<<<<<< HEAD
 
   Actualizar(){
     alert(this.producto)
@@ -29,4 +33,6 @@ export class VentaComponent implements OnInit {
       this.router.navigate(["venta"])
     })
   }
+=======
+>>>>>>> 6ef0c95b837e2a345cc0c3159fcec104f3638ca6
 }
