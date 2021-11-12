@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { CompraComponent } from './inventario/compra/compra.component';
 import { VentaComponent } from './inventario/venta/venta.component';
+import { FormsModule } from '@angular/forms';
+import { ServiceService } from './Service/service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,9 +16,12 @@ import { VentaComponent } from './inventario/venta/venta.component';
     VentaComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule
+    BrowserModule, 
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 
