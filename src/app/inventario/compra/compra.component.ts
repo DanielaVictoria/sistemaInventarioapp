@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Producto } from 'src/app/modelo/Producto';
+import { ServiceService } from 'src/app/Service/service.service';
 
 @Component({
   selector: 'app-compra',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompraComponent implements OnInit {
 
-  constructor() { }
+  productos:Producto[] = [];
+  producto:Producto = new Producto();
+  constructor(private service:ServiceService, private router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.service.getProductos()
+    .subscribe(data=>{
+      this.productos=data;
+    })
+  }
+
+  Registrar(){
+    alert(this.producto)
+    this.service.createProducto(this.producto)
+    .subscribe(data=>{
+      alert("Se registró con éxito");
+      this.router.navigate(["compra"])
+    })
   }
 
 }

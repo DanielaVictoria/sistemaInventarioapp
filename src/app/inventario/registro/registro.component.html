@@ -104,7 +104,7 @@
         cursor: pointer;
     }
 
-    .productos{
+    .registro{
         display: flex;
       justify-content: center;
       margin: relative;
@@ -157,7 +157,7 @@
         </g>
       </svg>
   
-      <span>Egreso por ventas</span>
+      <span>Registro</span>
   
       <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
         <title>Rocket Ship Smoke</title>
@@ -166,38 +166,21 @@
   
     </div>
 
-    
-    <div class = "productos">
-      <div class ="table table-hover mitabla" >
-       <table>
-         <thead>
-           <tr>
-             <th>ID</th>
-             <th>PRODUCTO</th>
-             <th>CANTIDAD</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr *ngFor="let producto of productos" class="text-center">
-             <td>{{producto.id}}</td>
-             <td>{{producto.nombre}}</td>
-             <td>{{producto.cantidad}}</td>
-           </tr>
-         </tbody>
-       </table>
-     </div>
-
-
-       <div class ="formulario">
+    <div class = "registro">
+       
+      <div class ="formulario">
+         <form action="">
+          <div class="form-group">
             <div>
-                <p>Cantidad a retirar: <input type="text" class="form-control" name="nuevo" required [(ngModel)]="producto.cantidad"> </p>
-                <br> <br>  <br>
-                
-                <button (click)="Actualizar()" class="btn btn-danger">Actualizar</button>
-
+                <p>Usuario: <input type="text" class="form-control" name="usuario" required [(ngModel)]="persona.usuario"> </p>
+                <p>Contraseña: <input type="text" class="form-control" name="contrasena" required [(ngModel)]="persona.contrasena"> </p>
+                <button data-ng-click="click(http://localhost:4200/login)" class="btn btn-danger">Registrar</button>
+                <p></p>
+                <button data-ng-click="click(http://localhost:4200/login)" class="btn btn-danger">Iniciar sesión</button>
             </div>
-       </div>
-
+          </div>
+        </form>
+      </div>
     </div>
 
     
