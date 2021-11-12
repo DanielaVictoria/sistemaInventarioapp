@@ -173,11 +173,11 @@
          <form action="">
           <div class="form-group">
             <div>
-                <p>Usuario: <input type="text" class="form-control" name="usuario" required [(ngModel)]="persona.usuario"> </p>
-                <p>Contraseña: <input type="text" class="form-control" name="contrasena" required [(ngModel)]="persona.contrasena"> </p>
-                <button (click)="NOSE()" class="btn btn-danger">Iniciar sesión</button>
+                <p>usuario: <input type="text" class="form-control" name="usuario" required [(ngModel)]="usuario"> </p>
+                <p>contrasena: <input type="text" class="form-control" name="contrasena" required [(ngModel)]="contrasena"> </p>
+                <button (click)=checkLogin() class="btn btn-success">Iniciar sesión</button>
                 <p></p>
-                <button data-ng-click="click('/registro/registro.component.html')" class="btn btn-danger">Registrar</button>
+                <button data-ng-click="click('/registro.component.html')" class="btn btn-danger">Registrar</button>
 
             </div>
           </div>

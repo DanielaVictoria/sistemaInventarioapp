@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Persona } from 'src/app/modelo/Persona';
-import { ServiceService } from 'src/app/Service/service.service';
+import { AuthenticationService } from 'src/app/Service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -10,19 +9,22 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class LoginComponent implements OnInit {
 
-  personas:Persona[] = [];
-  persona:Persona = new Persona();
-  constructor(private service:ServiceService, private router:Router) { }
+  usuario = 'javainuse'
+  contrasena = ''
+  invalidLogin = false
+
+  constructor(private loginservice: AuthenticationService, private router:Router) { }
 
 
-  ngOnInit(){
-    this.service.getPersonas()
-    .subscribe(data=>{
-      this.personas=data;
-    })
+  ngOnInit() {
   }
 
-  NOSE(){
-    
+  checkLogin() {
+    if (this.loginservice.authenticate(this.usuario, this.contrasena)
+    ) {
+      this.router.navigate([''])
+      this.invalidLogin = false
+    } else
+      this.invalidLogin = true
   }
 }
