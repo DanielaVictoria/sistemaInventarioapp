@@ -11,6 +11,3 @@ export class Producto{
         return "id"+ this.id +"nombre" + this.nombre + "cantidad" + this.cantidad + "precio compra" + this.precioCompra + "precio venta" + this.precioVenta
     }
 }
-
-
-    

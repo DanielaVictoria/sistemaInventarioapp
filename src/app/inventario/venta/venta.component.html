@@ -190,10 +190,10 @@
 
        <div class ="formulario">
             <div>
-                <p>Cantidad a retirar: <input type="text" class="form-control" name="nuevo" required [(ngModel)]="producto.cantidad"> </p>
+                <p>Cantidad a retirar: <input type="number" min="1" class="form-control" name="nuevo" required [(ngModel)]="producto.cantidad"> </p>
                 <br> <br>  <br>
                 
-                <button (click)="Actualizar()" class="btn btn-danger">Actualizar</button>
+                <button (click)="Actualizar()" class="btn btn-success">Actualizar</button>
             </div>
        </div>
 

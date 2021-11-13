@@ -175,10 +175,11 @@
             <div>
                 <p>usuario: <input type="text" class="form-control" name="usuario" required [(ngModel)]="usuario"> </p>
                 <p>contrasena: <input type="text" class="form-control" name="contrasena" required [(ngModel)]="contrasena"> </p>
+                <re-captcha (resolved)="resolved($event)" siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU" ></re-captcha>
                 <button (click)=checkLogin() class="btn btn-success">Iniciar sesión</button>
                 <p></p>
                 <button data-ng-click="click('/registro.component.html')" class="btn btn-danger">Registrar</button>
-
+                
             </div>
           </div>
         </form>

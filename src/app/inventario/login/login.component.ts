@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Service/authentication.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private loginservice: AuthenticationService, private router:Router) { }
 
 
-  ngOnInit() {
+  ngOnInit(){
   }
 
   checkLogin() {
@@ -24,7 +25,12 @@ export class LoginComponent implements OnInit {
     ) {
       this.router.navigate([''])
       this.invalidLogin = false
-    } else
-      this.invalidLogin = true
+    } else{this.invalidLogin = true
+      alert("Datos incorrectos");}
+      
+  }
+
+  public resolved(captchaResponse: string) { 
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
   }
 }

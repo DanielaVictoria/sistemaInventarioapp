@@ -22,7 +22,7 @@ export class CompraComponent implements OnInit {
   }
 
   Registrar(){
-    alert(this.producto)
+    alert("Se registró con éxito")
     this.service.createProducto(this.producto)
     .subscribe(data=>{
       alert("Se registró con éxito");

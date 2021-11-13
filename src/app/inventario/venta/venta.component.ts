@@ -23,7 +23,7 @@ export class VentaComponent implements OnInit {
   }
 
   Actualizar(){
-    alert(this.producto)
+    alert("Se actualizó con éxito");
     this.service.createProducto(this.producto)
     .subscribe(data=>{
       alert("Se actualizó con éxito");
